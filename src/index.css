@@ -1,0 +1,21 @@
+.notification {
+    color: white;
+    background:rgb(82, 201, 122);
+    font-size:20px;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 10 px;
+    margin-bottom: auto;
+
+
+}
+.error {
+    color: white;
+    background-color:red ;
+    font-size: 20px;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: auto;
+
+}
