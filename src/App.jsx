@@ -76,17 +76,17 @@ const App = () => {
 
   const addText = (e) => {
     e.preventDefault();
-    const data = {
-      name: newText.name,
-      number: newText.number
-    };
-    noteservices.post(data)
+    
+
+    noteservices
+    .post(newText)
       .then(response => {
         console.log(response);
         setNotes(notes.concat(response.data));
+        setMessage(`new number added:${newText.number}`)
         setNewText({ name: '', number: '' });
       })
-      .then(() =>{setMessage(`new number added:${data.number}`)})
+          
     setTimeout(() => {
       setMessage(null)
     }, 5000);
@@ -95,7 +95,8 @@ const App = () => {
   const deleteNote = (id) => {
     let result = window.confirm('Are you sure you want to delete this note?');
     if (result) {
-      noteservices.remove(id)
+      noteservices
+      .remove(id)
         .then(response => {
           console.log(response);
           setNotes(notes.filter(note => note.id !== id));
